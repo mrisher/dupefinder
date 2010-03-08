@@ -1,0 +1,17 @@
+For various reasons, I found that my mp3 shared hard drive had a large number
+of duplicate files with subtle variants. For example:
+   01 - Song Number One.mp3
+   01 Song Number One.mp3
+   01 - Song Number One (2).mp3
+
+I searched for a way to clean them up and couldn't find anything 
+computationally efficient. This is a simple, python program to find 
+duplicate MP3s in a directory and delete the less-desirable filenames.
+
+The algorithm is based on the assumption that, within a directory,
+you may have multiple files that start with the same track number. Basically,
+it computes the "Levenshtein edit distance" -- the number of characters you
+would need to change to edit string1 into string2 -- and then picks the one
+to delete.
+
+Enjoy.
